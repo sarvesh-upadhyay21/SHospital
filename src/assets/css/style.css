@@ -1,0 +1,233 @@
+/* ================= HERO FINAL ================= */
+
+.hero {
+    position: relative;
+    /* height: 90vh; */
+    overflow: hidden;
+}
+
+/* Wrapper */
+.hero-wrapper {
+    position: relative;
+    /* height: 100%; */
+}
+
+/* Background Image */
+.hero-image {
+    position: absolute;
+    inset: 0;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Overlay */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 1;
+}
+
+/* Content */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+/* Text */
+.hero-title {
+    font-size: 2.6rem;
+    font-weight: 700;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+}
+
+.hero-description {
+    max-width: 720px;
+    font-size: 1.05rem;
+}
+
+/* CTA */
+.cta-group .btn {
+    padding: 10px 22px;
+}
+
+/* Badges */
+.hero-badges {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.hero-badges .badge-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.hero-badges i {
+    color: #22c55e;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+}
+
+/* ================= HEADER NAV ================= */
+
+.navmenu ul {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+}
+
+.navmenu a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+}
+
+.navmenu a.active {
+    color: #22c55e;
+}
+
+/* Mobile */
+@media (max-width: 1199px) {
+    .navmenu {
+        position: fixed;
+        top: 80px;
+        right: -100%;
+        width: 280px;
+        height: calc(100vh - 80px);
+        background: #0f172a;
+        transition: 0.3s;
+        padding: 20px;
+    }
+
+    .navmenu-active {
+        right: 0;
+    }
+
+    .navmenu ul {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .mobile-nav-toggle {
+        font-size: 28px;
+        cursor: pointer;
+        color: #fff;
+    }
+}
+
+/* ================= ABOUT MODERN ================= */
+
+.about-modern {
+    padding: 80px 0;
+}
+
+.about-image-box img {
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.about-content-box {
+    padding-left: 10px;
+}
+
+.about-label {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #06b6d4;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.about-content-box h2 {
+    font-size: 38px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 18px;
+}
+
+.about-text {
+    color: #64748b;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 35px;
+}
+
+/* FEATURES */
+.about-features {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.feature-circle {
+    background: #f1f9fb;
+    border-radius: 50%;
+    width: 130px;
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.feature-circle i {
+    font-size: 30px;
+    color: #06b6d4;
+    margin-bottom: 6px;
+}
+
+.feature-circle h5 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #0f172a;
+    line-height: 1.3;
+}
+
+.feature-circle:hover {
+    background: #06b6d4;
+    transform: translateY(-6px);
+}
+
+.feature-circle:hover i,
+.feature-circle:hover h5 {
+    color: #fff;
+}
+
+/* RESPONSIVE */
+@media (max-width: 991px) {
+    .about-content-box h2 {
+        font-size: 30px;
+    }
+
+    .about-features {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
