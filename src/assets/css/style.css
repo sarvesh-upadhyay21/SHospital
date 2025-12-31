@@ -1,3 +1,175 @@
+/* ================= HEADER ================= */
+
+.header {
+    position: fixed;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    pointer-events: none;
+    /* allow floating look */
+}
+
+.header-container {
+    background: #ffffff;
+    border-radius: 999px;
+    padding: 10px 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    max-width: 1200px;
+    margin: 0 auto;
+    pointer-events: auto;
+}
+
+/* ===== LOGO ===== */
+.logo img {
+    height: 44px;
+    width: auto;
+}
+
+.sitename {
+    font-size: 20px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+/* ===== NAV MENU ===== */
+.navmenu {
+    display: flex;
+    align-items: center;
+}
+
+.navmenu ul {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navmenu ul li a {
+    position: relative;
+    font-size: 15px;
+    font-weight: 600;
+    color: #475569;
+    text-decoration: none;
+    padding-bottom: 4px;
+    transition: color 0.3s ease;
+}
+
+.navmenu ul li a:hover {
+    color: #0284c7;
+}
+
+/* ===== ACTIVE LINK (UNDERLINE) ===== */
+.navmenu ul li a.active {
+    color: #0284c7;
+}
+
+.navmenu ul li a.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 3px;
+    background: #0284c7;
+    border-radius: 4px;
+}
+
+/* ===== CTA BUTTON ===== */
+.btn-getstarted {
+    background: #06b6d4;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.btn-getstarted:hover {
+    background: #0891b2;
+    color: #ffffff;
+}
+
+/* ================= MOBILE NAV ================= */
+
+.mobile-nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: #0f172a;
+    cursor: pointer;
+}
+
+/* ===== MOBILE VIEW ===== */
+@media (max-width: 1199px) {
+    .navmenu {
+        position: fixed;
+        inset: 0;
+        background: rgba(15, 23, 42, 0.92);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translateY(-100%);
+        transition: transform 0.4s ease;
+    }
+
+    .navmenu-active {
+        transform: translateY(0);
+    }
+
+    .navmenu ul {
+        flex-direction: column;
+        gap: 22px;
+        text-align: center;
+    }
+
+    .navmenu ul li a {
+        font-size: 18px;
+        color: #ffffff;
+    }
+
+    .navmenu ul li a.active::after {
+        background: #38bdf8;
+    }
+
+    .btn-getstarted {
+        display: none;
+    }
+
+    .mobile-nav-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .header {
+        top: 10px;
+    }
+
+    .header-container {
+        border-radius: 20px;
+        padding: 10px 16px;
+    }
+}
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width: 575px) {
+    .sitename {
+        font-size: 17px;
+    }
+
+    .logo img {
+        height: 36px;
+    }
+}
+
+
 /* ================= HERO FINAL ================= */
 
 .hero {
@@ -230,4 +402,348 @@
     .about-features {
         grid-template-columns: repeat(2, 1fr);
     }
+}
+
+/* ================= DOCTORS DIRECTORY ================= */
+
+/* ===== HERO ===== */
+.directory-hero {
+    background: linear-gradient(rgba(15, 60, 80, 0.75),
+            rgba(15, 60, 80, 0.75)),
+        url("../img/services/about-surgery.jpg") center / cover no-repeat;
+    padding: 200px 0 70px;
+    color: #ffffff;
+}
+
+.directory-hero h1 {
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    margin: 0;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+/* ===== BREADCRUMB BELOW HERO ===== */
+.page-breadcrumb {
+    background: #ffffff;
+    padding: 14px 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.page-breadcrumb .breadcrumb-nav {
+    font-size: 14px;
+    color: #475569;
+}
+
+.page-breadcrumb .breadcrumb-nav a {
+    color: #0284c7;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.page-breadcrumb .breadcrumb-nav span {
+    color: #475569;
+}
+
+
+/* ===== Alphabet Filter ===== */
+.alphabet-filter {
+    background: #eaf6fb;
+    border-radius: 50px;
+    padding: 10px 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: center;
+}
+
+.alphabet-filter button {
+    border: none;
+    background: transparent;
+    font-weight: 600;
+    padding: 6px 10px;
+    cursor: pointer;
+    color: #0f172a;
+    border-radius: 20px;
+}
+
+.alphabet-filter .active {
+    background: #0ea5e9;
+    color: #fff;
+}
+
+/* ===== Doctor Grid ===== */
+.doctor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 28px;
+}
+
+/* ===== Doctor Card (NEW – Screenshot Match) ===== */
+.doctor-directory-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 22px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.doctor-directory-card:hover {
+    transform: translateY(-4px);
+}
+
+/* Top Section */
+.doctor-card-top {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.doctor-card-top img {
+    width: 90px;
+    height: 90px;
+    border-radius: 12px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.doctor-info h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.role {
+    font-size: 13px;
+    font-weight: 600;
+    color: #475569;
+}
+
+.doctor-divider {
+    margin: 10px 0;
+    border: none;
+    border-top: 1px solid #e5e7eb;
+}
+
+.specialty {
+    font-size: 14px;
+    color: #334155;
+}
+
+.sub-specialty {
+    font-size: 13px;
+    color: #475569;
+}
+
+/* ===== Tabs ===== */
+.doctor-tabs {
+    display: flex;
+    gap: 18px;
+    margin-top: 16px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.doctor-tabs span {
+    color: #64748b;
+    cursor: pointer;
+}
+
+.doctor-tabs .active {
+    color: #0284c7;
+    border-bottom: 2px solid #0284c7;
+    padding-bottom: 4px;
+}
+
+/* ===== Qualification ===== */
+.qualification {
+    margin-top: 12px;
+}
+
+.qualification p {
+    font-size: 13px;
+    margin: 6px 0;
+    color: #334155;
+}
+
+/* ===== Footer ===== */
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+}
+
+.view-profile {
+    font-weight: 600;
+    color: #0284c7;
+    text-decoration: none;
+}
+
+.view-profile:hover {
+    text-decoration: underline;
+}
+
+.arrow-btn {
+    width: 32px;
+    height: 32px;
+    background: #e5e7eb;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 18px;
+    color: #334155;
+}
+
+/* ===== CARD ===== */
+.doctor-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* ===== HEADER ===== */
+.doctor-header {
+    display: flex;
+    gap: 16px;
+}
+
+.doctor-header img {
+    width: 90px;
+    height: 90px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+/* ===== META ===== */
+.doctor-meta h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.doctor-role {
+    font-size: 14px;
+    color: #111;
+}
+
+.line {
+    width: 60px;
+    height: 2px;
+    background: #1d4ed8;
+    margin: 8px 0;
+}
+
+.doctor-speciality {
+    font-size: 14px;
+    margin: 0;
+}
+
+.doctor-sub {
+    font-size: 13px;
+    color: #444;
+}
+
+/* ===== DIVIDER ===== */
+.divider {
+    height: 1px;
+    background: #e5e7eb;
+    margin: 16px 0;
+}
+
+/* ===== TABS ===== */
+.doctor-tabs {
+    display: flex;
+    gap: 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.doctor-tabs span {
+    color: #555;
+    cursor: pointer;
+}
+
+.doctor-tabs .active {
+    color: #1d4ed8;
+    border-bottom: 2px solid #1d4ed8;
+    padding-bottom: 4px;
+}
+
+/* ===== QUALIFICATION ===== */
+.doctor-qualification {
+    list-style: none;
+    padding: 0;
+    margin: 12px 0 0;
+    font-size: 14px;
+}
+
+.doctor-qualification li {
+    margin-bottom: 6px;
+}
+
+/* ===== FOOTER ===== */
+.doctor-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.view-profile {
+    font-weight: 600;
+    color: #1d4ed8;
+    cursor: pointer;
+}
+
+.arrow {
+    width: 32px;
+    height: 32px;
+    background: #e5e7eb;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 18px;
+}
+
+/* ===== CONTACT ===== */
+.contact h3 {
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.contact-info .info-item {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+.contact-info i {
+    font-size: 22px;
+    color: #0ea5e9;
+}
+
+.contact-info h5 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.contact-info p {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.contact-form .form-control {
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+}
+
+.contact-form button {
+    padding: 10px 30px;
+    border-radius: 30px;
 }
